@@ -1,0 +1,329 @@
+
+Platform: atmelavr
+
+Type                  MCU            Frequency  Flash   RAM    Name
+
+bluefruitmicro        atmega32u4     8Mhz      28kB    2.5kB  Adafruit Bluefruit Micro
+feather32u4           atmega32u4     8Mhz      28kB    2.5kB  Adafruit Feather
+flora8                atmega32u4     8Mhz      28kB    2.5kB  Adafruit Flora
+gemma                 attiny85       8Mhz      8kB     512B   Adafruit Gemma
+metro                 atmega328p     16Mhz     31kB    2kB    Adafruit Metro
+protrinket3ftdi       atmega328p     16Mhz     28kB    2kB    Adafruit Pro Trinket 3V/12MHz (FTDI)
+protrinket3           atmega328p     12Mhz     28kB    2kB    Adafruit Pro Trinket 3V/12MHz (USB)
+protrinket5           atmega328p     16Mhz     28kB    2kB    Adafruit Pro Trinket 5V/16MHz (USB)
+protrinket5ftdi       atmega328p     16Mhz     28kB    2kB    Adafruit Pro Trinket 5V/16MHz (USB)
+trinket3              attiny85       8Mhz      8kB     512B   Adafruit Trinket 3V/8MHz
+trinket5              attiny85       16Mhz     8kB     512B   Adafruit Trinket 5V/16MHz
+btatmega168           atmega168      16Mhz     14kB    1kB    Arduino BT ATmega168
+btatmega328           atmega328p     16Mhz     28kB    2kB    Arduino BT ATmega328
+diecimilaatmega168    atmega168      16Mhz     14kB    1kB    Arduino Duemilanove or Diecimila ATmega168
+diecimilaatmega328    atmega328p     16Mhz     30kB    2kB    Arduino Duemilanove or Diecimila ATmega328
+esplora               atmega32u4     16Mhz     28kB    2.5kB  Arduino Esplora
+ethernet              atmega328p     16Mhz     31kB    2kB    Arduino Ethernet
+fio                   atmega328p     8Mhz      30kB    2kB    Arduino Fio
+chiwawa               atmega32u4     16Mhz     28kB    2.5kB  Arduino Industrial 101
+leonardo              atmega32u4     16Mhz     28kB    2.5kB  Arduino Leonardo
+leonardoeth           atmega32u4     16Mhz     28kB    2.5kB  Arduino Leonardo ETH
+lilypadatmega168      atmega168      8Mhz      14kB    1kB    Arduino LilyPad ATmega168
+lilypadatmega328      atmega328p     8Mhz      30kB    2kB    Arduino LilyPad ATmega328
+LilyPadUSB            atmega32u4     8Mhz      28kB    2.5kB  Arduino LilyPad USB
+megaADK               atmega2560     16Mhz     248kB   8kB    Arduino Mega ADK
+megaatmega1280        atmega1280     16Mhz     124kB   8kB    Arduino Mega or Mega 2560 ATmega1280
+megaatmega2560        atmega2560     16Mhz     248kB   8kB    Arduino Mega or Mega 2560 ATmega2560 (Mega 2560)
+micro                 atmega32u4     16Mhz     28kB    2.5kB  Arduino Micro
+miniatmega168         atmega168      16Mhz     14kB    1kB    Arduino Mini ATmega168
+miniatmega328         atmega328p     16Mhz     28kB    2kB    Arduino Mini ATmega328
+atmegangatmega168     atmega168      16Mhz     14kB    1kB    Arduino NG or older ATmega168
+atmegangatmega8       atmega8        16Mhz     7kB     1kB    Arduino NG or older ATmega8
+nanoatmega168         atmega168      16Mhz     14kB    1kB    Arduino Nano ATmega168
+nanoatmega328         atmega328p     16Mhz     30kB    2kB    Arduino Nano ATmega328
+pro8MHzatmega168      atmega168      8Mhz      14kB    1kB    Arduino Pro or Pro Mini ATmega168 (3.3V, 8 MHz)
+pro16MHzatmega168     atmega168      16Mhz     14kB    1kB    Arduino Pro or Pro Mini ATmega168 (5V, 16 MHz)
+pro8MHzatmega328      atmega328p     8Mhz      30kB    2kB    Arduino Pro or Pro Mini ATmega328 (3.3V, 8 MHz)
+pro16MHzatmega328     atmega328p     16Mhz     30kB    2kB    Arduino Pro or Pro Mini ATmega328 (5V, 16 MHz)
+robotControl          atmega32u4     16Mhz     28kB    2.5kB  Arduino Robot Control
+robotMotor            atmega32u4     16Mhz     28kB    2.5kB  Arduino Robot Motor
+uno                   atmega328p     16Mhz     31kB    2kB    Arduino Uno
+yun                   atmega32u4     16Mhz     28kB    2.5kB  Arduino Yun
+yunmini               atmega32u4     16Mhz     28kB    2.5kB  Arduino Yun Mini
+zumbt328              atmega328p     16Mhz     28kB    2kB    BQ ZUM BT-328
+raspduino             atmega328p     16Mhz     30kB    2kB    BitWizard Raspduino
+digispark-tiny        attiny85       16Mhz     5kB     512B   Digistump Digispark (Default - 16 MHz)
+digispark-pro32       attiny167      16Mhz     14kB    512B   Digistump Digispark Pro (16 MHz) (32 byte buffer)
+digispark-pro64       attiny167      16Mhz     14kB    512B   Digistump Digispark Pro (16 MHz) (64 byte buffer)
+digispark-pro         attiny167      16Mhz     14kB    512B   Digistump Digispark Pro (Default 16 MHz)
+engduinov1            atmega32u4     8Mhz      28kB    2.5kB  Engduino 1
+engduinov2            atmega32u4     8Mhz      28kB    2.5kB  Engduino 2
+engduinov3            atmega32u4     8Mhz      28kB    2.5kB  Engduino 3
+attiny13              attiny13       9Mhz      1kB     64B    Generic ATTiny13
+attiny24              attiny24       8Mhz      2kB     128B   Generic ATTiny24
+attiny25              attiny25       8Mhz      2kB     128B   Generic ATTiny25
+attiny44              attiny44       8Mhz      4kB     256B   Generic ATTiny44
+attiny45              attiny45       8Mhz      4kB     256B   Generic ATTiny45
+attiny84              attiny84       8Mhz      8kB     512B   Generic ATTiny84
+attiny85              attiny85       8Mhz      8kB     512B   Generic ATTiny85
+lightblue-bean        atmega328p     8Mhz      31kB    2kB    LightBlue Bean
+lightup               atmega32u4     8Mhz      28kB    2.5kB  LightUp
+one                   atmega32u4     16Mhz     28kB    2.5kB  Linino One
+moteino               atmega328p     16Mhz     31kB    2kB    LowPowerLab Moteino
+moteinomega           atmega1284p    16Mhz     127kB   16kB   LowPowerLab MoteinoMEGA
+168pa16m              atmega168p     16Mhz     15kB    1kB    Microduino Core (Atmega168PA@16M,5V)
+168pa8m               atmega168p     8Mhz      15kB    1kB    Microduino Core (Atmega168PA@8M,3.3V)
+328p16m               atmega328p     16Mhz     31kB    2kB    Microduino Core (Atmega328P@16M,5V)
+328p8m                atmega328p     8Mhz      31kB    2kB    Microduino Core (Atmega328P@8M,3.3V)
+32u416m               atmega32u4     16Mhz     28kB    2.5kB  Microduino Core USB (ATmega32U4@16M,5V)
+1284p16m              atmega1284p    16Mhz     127kB   16kB   Microduino Core+ (ATmega1284P@16M,5V)
+1284p8m               atmega1284p    8Mhz      127kB   16kB   Microduino Core+ (ATmega1284P@8M,3.3V)
+644pa16m              atmega644p     16Mhz     63kB    4kB    Microduino Core+ (Atmega644PA@16M,5V)
+644pa8m               atmega644p     8Mhz      63kB    4kB    Microduino Core+ (Atmega644PA@8M,3.3V)
+mightycore1284        atmega1284p    16Mhz     127kB   16kB   MightyCore ATmega1284
+mightycore16          atmega16       16Mhz     15kB    1kB    MightyCore ATmega16
+mightycore164         atmega164p     16Mhz     15kB    1kB    MightyCore ATmega164
+mightycore32          atmega32       16Mhz     31kB    2kB    MightyCore ATmega32
+mightycore324         atmega324p     16Mhz     31kB    2kB    MightyCore ATmega324
+mightycore644         atmega644p     16Mhz     63kB    4kB    MightyCore ATmega644
+panStampAVR           atmega328p     8Mhz      31kB    2kB    PanStamp AVR
+quirkbot              atmega32u4     8Mhz      28kB    2.5kB  Quirkbot
+blend                 atmega32u4     16Mhz     28kB    2.5kB  RedBearLab Blend
+blendmicro16          atmega32u4     16Mhz     28kB    2.5kB  RedBearLab Blend Micro 3.3V/16MHz (overclock)
+blendmicro8           atmega32u4     8Mhz      28kB    2.5kB  RedBearLab Blend Micro 3.3V/8MHz
+reprap_rambo          atmega2560     16Mhz     252kB   8kB    RepRap RAMBo
+sanguino_atmega1284p  atmega1284p    16Mhz     127kB   16kB   Sanguino ATmega1284p (16MHz)
+sanguino_atmega1284_8m atmega1284p    8Mhz      127kB   16kB   Sanguino ATmega1284p (8MHz)
+sanguino_atmega644    atmega644      16Mhz     63kB    4kB    Sanguino ATmega644 or ATmega644A (16 MHz)
+sanguino_atmega644_8m atmega644      8Mhz      63kB    4kB    Sanguino ATmega644 or ATmega644A (8 MHz)
+sanguino_atmega644p   atmega644p     16Mhz     63kB    4kB    Sanguino ATmega644P or ATmega644PA (16 MHz)
+sanguino_atmega644p_8m atmega644p     8Mhz      63kB    4kB    Sanguino ATmega644P or ATmega644PA (8 MHz)
+sparkfun_digitalsandbox atmega328p     16Mhz     31kB    2kB    SparkFun Digital Sandbox
+sparkfun_fiov3        atmega32u4     8Mhz      28kB    2.5kB  SparkFun Fio V3 3.3V/8MHz
+sparkfun_makeymakey   atmega32u4     16Mhz     28kB    2.5kB  SparkFun Makey Makey
+sparkfun_megapro8MHz  atmega2560     8Mhz      252kB   8kB    SparkFun Mega Pro 3.3V/8MHz
+sparkfun_megapro16MHz atmega2560     16Mhz     252kB   8kB    SparkFun Mega Pro 5V/16MHz
+sparkfun_megamini     atmega2560     8Mhz      252kB   8kB    SparkFun Mega Pro Mini 3.3V
+uview                 atmega328p     16Mhz     31kB    2kB    SparkFun MicroView
+sparkfun_promicro8    atmega32u4     8Mhz      28kB    2.5kB  SparkFun Pro Micro 3.3V/8MHz
+sparkfun_promicro16   atmega32u4     16Mhz     28kB    2.5kB  SparkFun Pro Micro 5V/16MHz
+sparkfun_redboard     atmega328p     16Mhz     31kB    2kB    SparkFun RedBoard
+tinyduino             atmega328p     8Mhz      30kB    2kB    TinyCircuits TinyDuino Processor Board
+tinylily              atmega328p     8Mhz      30kB    2kB    TinyCircuits TinyLily Mini Processor
+wildfirev2            atmega1284p    16Mhz     119kB   16kB   Wicked Device WildFire V2
+wildfirev3            atmega1284p    16Mhz     127kB   16kB   Wicked Device WildFire V3
+ardhat                atmega328p     16Mhz     31kB    2kB    ubIQio Ardhat
+
+Platform: atmelsam
+
+Type                  MCU            Frequency  Flash   RAM    Name
+
+due                   sam3x8e        84Mhz     512kB   32kB   Arduino Due (Programming Port)
+dueUSB                sam3x8e        84Mhz     512kB   32kB   Arduino Due (USB Native Port)
+zero                  samd21g18a     48Mhz     256kB   32kB   Arduino Zero (Programming Port)
+zeroUSB               samd21g18a     48Mhz     256kB   32kB   Arduino Zero (USB Native Port)
+samr21_xpro           atsamr21g18a   48Mhz     256kB   32kB   Atmel ATSAMR21-XPRO
+samd21_xpro           atsamd21j18a   48Mhz     256kB   32kB   Atmel SAMD21-XPRO
+saml21_xpro_b         atsaml21j18b   48Mhz     256kB   32kB   Atmel SAML21-XPRO-B
+digix                 at91sam3x8e    84Mhz     512kB   28kB   Digistump DigiX
+sainSmartDue          at91sam3x8e    84Mhz     512kB   32kB   SainSmart Due (Programming Port)
+sainSmartDueUSB       at91sam3x8e    84Mhz     512kB   32kB   SainSmart Due (USB Native Port)
+
+Platform: espressif
+
+Type                  MCU            Frequency  Flash   RAM    Name
+
+huzzah                esp8266        80Mhz     4096kB  80kB   Adafruit HUZZAH ESP8266
+esp_wroom_02          esp8266        80Mhz     4096kB  50kB   ESP-WROOM-02
+espduino              esp8266        80Mhz     4096kB  80kB   ESPDuino (ESP-13 Module)
+espino                esp8266        80Mhz     4096kB  80kB   ESPino
+espresso_lite_v1      esp8266        80Mhz     4096kB  80kB   ESPresso Lite 1.0
+espresso_lite_v2      esp8266        80Mhz     4096kB  80kB   ESPresso Lite 2.0
+esp12e                esp8266        80Mhz     4096kB  80kB   Espressif ESP8266 ESP-12E
+esp01_1m              esp8266        80Mhz     1024kB  80kB   Espressif Generic ESP8266 ESP-01 1M
+esp01                 esp8266        80Mhz     512kB   80kB   Espressif Generic ESP8266 ESP-01 512k
+esp07                 esp8266        80Mhz     4096kB  80kB   Espressif Generic ESP8266 ESP-07
+nodemcu               esp8266        80Mhz     4096kB  80kB   NodeMCU 0.9 (ESP-12 Module)
+nodemcuv2             esp8266        80Mhz     4096kB  80kB   NodeMCU 1.0 (ESP-12E Module)
+modwifi               esp8266        80Mhz     2048kB  80kB   Olimex MOD-WIFI-ESP8266(-DEV)
+thing                 esp8266        80Mhz     512kB   80kB   SparkFun ESP8266 Thing
+thingdev              esp8266        80Mhz     512kB   80kB   SparkFun ESP8266 Thing Dev
+esp210                esp8266        80Mhz     4096kB  80kB   SweetPea ESP-210
+espinotee             esp8266        80Mhz     4096kB  80kB   ThaiEasyElec ESPino
+d1_mini               esp8266        80Mhz     4096kB  80kB   WeMos D1 R2 & mini
+d1                    esp8266        80Mhz     4096kB  80kB   WeMos D1(Retired)
+
+Platform: freescalekinetis
+
+Type                  MCU            Frequency  Flash   RAM    Name
+
+IBMEthernetKit        mk64fn1m0vll12 120Mhz    1024kB  256kB  Ethernet IoT Starter Kit
+frdm_k20d50m          mk20dx128vlh5  48Mhz     128kB   16kB   Freescale Kinetis FRDM-K20D50M
+frdm_k22f             mk22fn512vlh12 120Mhz    512kB   128kB  Freescale Kinetis FRDM-K22F
+frdm_k64f             mk64fn1m0vll12 120Mhz    1024kB  256kB  Freescale Kinetis FRDM-K64F
+frdm_kl05z            mkl05z32vfm4   48Mhz     32kB    4kB    Freescale Kinetis FRDM-KL05Z
+frdm_kl25z            mkl25z128vlk4  48Mhz     128kB   16kB   Freescale Kinetis FRDM-KL25Z
+frdm_kl46z            mkl46z256vll4  48Mhz     256kB   32kB   Freescale Kinetis FRDM-KL46Z
+
+Platform: intel_arc32
+
+Type                  MCU            Frequency  Flash   RAM    Name
+
+genuino101            ARCv2EM        32Mhz     192kB   80kB   Arduino/Genuino 101
+
+Platform: lattice_ice40
+
+Type                  MCU            Frequency  Flash   RAM    Name
+
+icezum                ice40hx1k      12Mhz     32kB    32kB   BQ IceZUM Alhambra FPGA
+icestick              ice40hx1k      12Mhz     32kB    32kB   Lattice iCEstick FPGA Evaluation Kit
+
+Platform: linux_arm
+
+Type                  MCU            Frequency  Flash   RAM    Name
+
+raspberrypi_1b        bcm2835        700Mhz    524288kB 524288kB Raspberry Pi 1 Model B
+raspberrypi_2b        bcm2836        900Mhz    1048576kB 1048576kB Raspberry Pi 2 Model B
+raspberrypi_zero      bcm2835        1000Mhz   524288kB 524288kB Raspberry Pi Zero
+
+Platform: microchippic32
+
+Type                  MCU            Frequency  Flash   RAM    Name
+
+picadillo_35t         32MX795F512L   80Mhz     508kB   128kB  4DSystems PICadillo 35T
+cerebot32mx4          32MX460F512L   80Mhz     508kB   32kB   Digilent Cerebot 32MX4
+cerebot32mx7          32MX795F512L   80Mhz     508kB   128kB  Digilent Cerebot 32MX7
+openscope             32MZ2048EFG124 200Mhz    2032kB  512kB  Digilent OpenScope
+openbci               32MX250F128B   40Mhz     120kB   32kB   Digilent OpenScope
+chipkit_cmod          32MX150F128D   40Mhz     124kB   32kB   Digilent chipKIT Cmod
+chipkit_dp32          32MX250F128B   40Mhz     120kB   32kB   Digilent chipKIT DP32
+mega_pic32            32MX795F512L   80Mhz     508kB   128kB  Digilent chipKIT MAX32
+chipkit_mx3           32MX320F128H   80Mhz     124kB   16kB   Digilent chipKIT MX3
+chipkit_pro_mx4       32MX460F512L   80Mhz     508kB   32kB   Digilent chipKIT Pro MX4
+chipkit_pro_mx7       32MX795F512L   80Mhz     508kB   128kB  Digilent chipKIT Pro MX7
+uno_pic32             32MX320F128H   80Mhz     124kB   16kB   Digilent chipKIT UNO32
+chipkit_wf32          32MX695F512L   80Mhz     508kB   128kB  Digilent chipKIT WF32
+chipkit_wifire        32MZ2048ECG100 200Mhz    2032kB  512kB  Digilent chipKIT WiFire
+chipkit_uc32          32MX340F512H   80Mhz     508kB   32kB   Digilent chipKIT uC32
+chipkit_pi            32MX250F128B   40Mhz     120kB   32kB   Element14 chipKIT Pi
+fubarino_mini         32MX250F128D   48Mhz     120kB   32kB   Fubarino Mini
+fubarino_sd           32MX795F512H   80Mhz     508kB   128kB  Fubarino SD (1.5)
+pinguino32            32MX440F256H   80Mhz     252kB   32kB   Olimex PIC32-PINGUINO
+usbono_pic32          32MX440F512H   80Mhz     508kB   32kB   PONTECH UAV100
+quick240_usb          32MX795F512L   80Mhz     508kB   128kB  PONTECH quicK240
+cui32stem             32MX795F512H   80Mhz     508kB   128kB  SeeedStudio CUI32stem
+ubw32_mx460           32MX460F512L   80Mhz     508kB   32kB   UBW32 MX460
+ubw32_mx795           32MX795F512L   80Mhz     508kB   128kB  UBW32 MX795
+
+Platform: nordicnrf51
+
+Type                  MCU            Frequency  Flash   RAM    Name
+
+bbcmicrobit           nrf51822       16Mhz     256kB   16kB   BBC micro:bit
+dfcm_nnn40            nrf51822       32Mhz     256kB   32kB   Delta DFCM-NNN40
+wallBotBLE            nrf51822       16Mhz     128kB   16kB   JKSoft Wallbot BLE
+nrf51_dk              nrf51822       32Mhz     256kB   32kB   Nordic nRF51-DK
+nrf51_dongle          nrf51822       32Mhz     256kB   32kB   Nordic nRF51-Dongle
+nrf51_mkit            nrf51822       16Mhz     128kB   16kB   Nordic nRF51822-mKIT
+rfduino               nrf51822       16Mhz     128kB   8kB    RFduino
+redBearLabBLENano     nrf51822       16Mhz     256kB   16kB   RedBearLab BLE Nano
+redBearLab            nrf51822       16Mhz     256kB   16kB   RedBearLab nRF51822
+seeedTinyBLE          nrf51822       16Mhz     256kB   16kB   SeeedStudio Seeed Tiny BLE
+hrm1017               nrf51822       16Mhz     256kB   16kB   Switch Science mbed HRM1017
+
+Platform: nxplpc
+
+Type                  MCU            Frequency  Flash   RAM    Name
+
+lpc11u35_501          lpc11u35       48Mhz     64kB    10kB   CQ Publishing TG-LPC11U35-501
+lpc11u35              lpc11u35       48Mhz     64kB    10kB   Embedded Artists LPC11U35 QuickStart Board
+lpc4088_dm            lpc4088        120Mhz    512kB   96kB   Embedded Artists LPC4088 Display Module
+lpc4088               lpc4088        120Mhz    512kB   96kB   Embedded Artists LPC4088 QuickStart Board
+blueboard_lpc11u24    lpc11u24       48Mhz     32kB    8kB    NGX Technologies BlueBoard-LPC11U24
+lpc1549               lpc1549        72Mhz     256kB   36kB   NXP LPCXpresso1549
+lpc11u24              lpc11u24       48Mhz     32kB    8kB    NXP mbed LPC11U24
+lpc1768               lpc1768        96Mhz     512kB   64kB   NXP mbed LPC1768
+mbuino                lpc11u24       48Mhz     32kB    8kB    Outrageous Circuits mBuino
+seeeduinoArchPro      lpc1768        96Mhz     512kB   64kB   SeeedStudio Seeeduino-Arch-Pro
+dipcortexm0           lpc11u24       50Mhz     32kB    8kB    Solder Splash Labs DipCortex M0
+lpc1114fn28           lpc1114fn28    48Mhz     32kB    4kB    Switch Science mbed LPC1114FN28
+ubloxc027             lpc1768        96Mhz     512kB   64kB   u-blox C027
+
+Platform: siliconlabsefm32
+
+Type                  MCU            Frequency  Flash   RAM    Name
+
+efm32gg_stk3700       efm32gg990f1024 48Mhz     1024kB  128kB  Silicon Labs EFM32GG-STK3700 (Giant Gecko)
+efm32lg_stk3600       efm32lg990f256 48Mhz     256kB   32kB   Silicon Labs EFM32LG-STK3600 (Leopard Gecko)
+efm32wg_stk3800       efm32wg990f256 48Mhz     256kB   32kB   Silicon Labs EFM32WG-STK3800 (Wonder Gecko)
+efm32zg_stk3200       efm2zg222f32   24Mhz     32kB    4kB    Silicon Labs EFM32ZG-STK3200 (Zero Gecko)
+efm32hg_stk3400       efm32hg322f64  24Mhz     64kB    8kB    Silicon Labs SLSTK3400A USB-enabled (Happy Gecko)
+
+Platform: ststm32
+
+Type                  MCU            Frequency  Flash   RAM    Name
+
+b96b_f446ve           stm32f446vet6  168Mhz    512kB   128kB  96Boards B96B-F446VE
+armstrap_eagle1024    stm32f417vgt6  168Mhz    1024kB  192kB  Armstrap Eagle 1024
+armstrap_eagle2048    stm32f427vit6  168Mhz    2042kB  256kB  Armstrap Eagle 2048
+armstrap_eagle512     stm32f407vet6  168Mhz    512kB   192kB  Armstrap Eagle 512
+disco_f334c8          stm32f334c8t6  72Mhz     64kB    12kB   ST 32F3348DISCOVERY
+disco_f401vc          stm32f401vct6  84Mhz     256kB   64kB   ST 32F401CDISCOVERY
+disco_f429zi          stm32f429zit6  180Mhz    2048kB  256kB  ST 32F429IDISCOVERY
+disco_f469ni          stm32f469nih6  180Mhz    1024kB  384kB  ST 32F469IDISCOVERY
+disco_l053c8          stm32l053c8t6  32Mhz     64kB    8kB    ST 32L0538DISCOVERY
+disco_l476vg          stm32l476vgt6  80Mhz     1024kB  128kB  ST 32L476GDISCOVERY
+nucleo_f030r8         stm32f030r8t6  48Mhz     64kB    8kB    ST Nucleo F030R8
+nucleo_f031k6         stm32f031k6t6  48Mhz     32kB    4kB    ST Nucleo F031K6
+nucleo_f042k6         stm32f042k6t6  48Mhz     32kB    6kB    ST Nucleo F042K6
+nucleo_f070rb         stm32f070rbt6  48Mhz     128kB   16kB   ST Nucleo F070RB
+nucleo_f072rb         stm32f072rbt6  48Mhz     128kB   16kB   ST Nucleo F072RB
+nucleo_f091rc         stm32f091rct6  48Mhz     256kB   32kB   ST Nucleo F091RC
+nucleo_f103rb         stm32f103rbt6  72Mhz     128kB   20kB   ST Nucleo F103RB
+nucleo_f302r8         stm32f302r8t6  72Mhz     64kB    16kB   ST Nucleo F302R8
+nucleo_f303k8         stm32f303k8t6  72Mhz     64kB    16kB   ST Nucleo F303K8
+nucleo_f303re         stm32f303ret6  72Mhz     512kB   64kB   ST Nucleo F303RE
+nucleo_f334r8         stm32f334r8t6  72Mhz     64kB    16kB   ST Nucleo F334R8
+nucleo_f401re         stm32f401ret6  84Mhz     512kB   96kB   ST Nucleo F401RE
+nucleo_f410rb         stm32f410rbt6  100Mhz    128kB   32kB   ST Nucleo F410RB
+nucleo_f411re         stm32f411ret6  100Mhz    512kB   128kB  ST Nucleo F411RE
+nucleo_f446re         stm32f446ret6  180Mhz    512kB   128kB  ST Nucleo F446RE
+nucleo_l053r8         stm32l053r8t6  48Mhz     64kB    8kB    ST Nucleo L053R8
+nucleo_l073rz         stm32l073rz    32Mhz     192kB   20kB   ST Nucleo L073RZ
+nucleo_l152re         stm32l152ret6  32Mhz     512kB   80kB   ST Nucleo L152RE
+nucleo_l476rg         stm32l476rgt6  80Mhz     1024kB  128kB  ST Nucleo L476RG
+disco_f051r8          stm32f051r8t6  48Mhz     64kB    8kB    ST STM32F0DISCOVERY
+disco_f303vc          stm32f303vct6  72Mhz     256kB   48kB   ST STM32F3DISCOVERY
+disco_f407vg          stm32f407vgt6  168Mhz    1024kB  128kB  ST STM32F4DISCOVERY
+disco_l152rb          stm32l152rbt6  32Mhz     128kB   16kB   ST STM32LDISCOVERY
+disco_f100rb          stm32f100rbt6  24Mhz     128kB   8kB    ST STM32VLDISCOVERY
+seeedArchMax          stm32f407vet6  168Mhz    512kB   192kB  SeeedStudio Arch Max
+
+Platform: teensy
+
+Type                  MCU            Frequency  Flash   RAM    Name
+
+teensy20              atmega32u4     16Mhz     31kB    2.5kB  Teensy 2.0
+teensy30              mk20dx128      48Mhz     128kB   16kB   Teensy 3.0
+teensy31              mk20dx256      72Mhz     256kB   64kB   Teensy 3.1 / 3.2
+teensylc              mkl26z64       48Mhz     62kB    8kB    Teensy LC
+teensy20pp            at90usb1286    16Mhz     127kB   8kB    Teensy++ 2.0
+
+Platform: timsp430
+
+Type                  MCU            Frequency  Flash   RAM    Name
+
+panStampNRG           cc430f5137     12Mhz     31kB    4kB    PanStamp NRG 1.1
+lpmsp430fr5739        msp430fr5739   16Mhz     15kB    1kB    TI FraunchPad w/ msp430fr5739
+lpmsp430f5529         msp430f5529    16Mhz     128kB   1kB    TI LaunchPad w/ msp430f5529 (16MHz)
+lpmsp430f5529_25      msp430f5529    25Mhz     128kB   1kB    TI LaunchPad w/ msp430f5529 (25MHz)
+lpmsp430fr4133        msp430g2553    16Mhz     15kB    2kB    TI LaunchPad w/ msp430fr4133
+lpmsp430fr5969        msp430fr5969   8Mhz      64kB    1kB    TI LaunchPad w/ msp430fr5969
+lpmsp430fr6989        msp430g2553    16Mhz     127kB   2kB    TI LaunchPad w/ msp430fr6989
+lpmsp430g2231         msp430g2231    1Mhz      2kB     128B   TI LaunchPad w/ msp430g2231 (1 MHz)
+lpmsp430g2452         msp430g2452    16Mhz     8kB     256B   TI LaunchPad w/ msp430g2452 (16MHz)
+lpmsp430g2553         msp430g2553    16Mhz     16kB    512B   TI LaunchPad w/ msp430g2553 (16MHz)
+
+Platform: titiva
+
+Type                  MCU            Frequency  Flash   RAM    Name
+
+lplm4f120h5qr         lplm4f120h5qr  80Mhz     256kB   32kB   TI LaunchPad (Stellaris) w/ lm4f120 (80MHz)
+lptm4c1230c3pm        lptm4c1230c3pm 80Mhz     256kB   32kB   TI LaunchPad (Tiva C) w/ tm4c123 (80MHz)
+lptm4c1294ncpdt       lptm4c1294ncpdt 120Mhz    1024kB  256kB  TI LaunchPad (Tiva C) w/ tm4c129 (120MHz)

@@ -1,0 +1,318 @@
+<!--
+* Time-lapse project
+* Author: Sergey Firsov
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+          integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+    <style>
+        .row {
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="page-header">
+        <h1>Timelapse project</h1>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <p>Select your camera</p>
+            <select id="select-camera" class="btn btn-default form-control">
+                <option value="0">Sony</option>
+                <option value="1">Nikon</option>
+                <option value="2">Canon</option>
+                <option value="3">Pentax</option>
+                <option value="4">Olympus</option>
+                <option value="5">Minolta</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="radio">
+                <label><input type="radio" id="normal-mode" name="shutter-mode" value="normal-mode" checked>Normal mode</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" id="bulb-mode" name="shutter-mode" value="bulb-mode">Bulb mode</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="input-group">
+                <span class="input-group-addon" id="pause-between-shutter-addon">Shooting rate in millis</span>
+                <input type="number" min="5000" value="6000" step="100" class="form-control" id="pause-between-shutter" aria-describedby="pause-between-shutter-addon">
+            </div>
+        </div>
+    </div>
+    <div class="row" id="shutter-delay-row" hidden="true">
+        <div class="col-xs-12">
+            <div class="input-group">
+                <span class="input-group-addon" id="shutter-open-time-addon">Shutter open time</span>
+                <input type="number" min="1000" value="2000" step="100" class="form-control" id="shutter-open-time" aria-describedby="shutter-open-time-addon">
+            </div>
+        </div>
+    </div>
+    <div id="iterations">
+
+    </div>
+    <div class="row">
+        <div class="col-xs-6 text-center">
+            <button class="btn btn-success form-control" id="add-stay">Add stay</button>
+        </div>
+        <div class="col-xs-6 text-center">
+            <button class="btn btn-success form-control" id="add-move">Add move</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <button class="btn btn-warning form-control" id="go">Go!</button>
+        </div>
+    </div>
+    <div class="row" id="statistics-row" hidden="true">
+        <div class="col-xs-12 text-center">
+            <p id="statistics"></p>
+        </div>
+    </div>
+</div>
+
+<div class="row jumbotron" id="iteration-move-block" hidden="true">
+    <div class="col-xs-12">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="radio">
+                    <label><input type="radio" id="clockwise" name="rotate-direction" value="clockwise" checked>Rotate clockwise</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" id="counter-clockwise" name="rotate-direction" value="counter-clockwise">Rotate counter clockwise</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="input-group">
+                    <span class="input-group-addon" id="rotation-degree-addon">Enter rotation angle</span>
+                    <input type="number" min="0" max="10000" step="1" class="form-control" id="rotation-degree" aria-describedby="rotation-degree-addon">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="input-group">
+                    <span class="input-group-addon" id="steps-per-shot-addon">Steps per 1 photo</span>
+                    <input type="number" min="0" max="10000" step="1" class="form-control" id="steps-per-shot"
+                           aria-describedby="steps-per-shot-addon">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row jumbotron" id="iteration-stay-block" hidden="true">
+    <div class="col-xs-12">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="input-group">
+                    <span class="input-group-addon" id="stay-for-addon">Stay for</span>
+                    <input type="number" min="0" max="10000" step="1" class="form-control" id="stay-for"
+                           aria-describedby="stay-for-addon">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="radio">
+                    <label><input type="radio" name="time-scale-mode" value="60000" checked>Minutes</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="time-scale-mode" value="1000">Seconds</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var iterationNumber = 0;
+
+    var createNextMoveBlock = function() {
+        var nextIterationBlock = $("#iteration-move-block").clone();
+
+        nextIterationBlock.prepend("<h2>" + (iterationNumber + 1) + "</h2>");
+
+        nextIterationBlock.attr("id", "iteration-move-block" + iterationNumber);
+        nextIterationBlock.find("#clockwise").attr("id", "clockwise" + iterationNumber);
+        nextIterationBlock.find("#clockwise" + iterationNumber).attr("name", "rotate-direction" + iterationNumber);
+        nextIterationBlock.find("#counter-clockwise").attr("id", "counter-clockwise" + iterationNumber);
+        nextIterationBlock.find("#counter-clockwise" + iterationNumber).attr("name", "rotate-direction" + iterationNumber);
+
+        nextIterationBlock.find("#rotation-degree-addon").attr("id", "rotation-degree-addon" + iterationNumber);
+        nextIterationBlock.find("#rotation-degree").attr("id", "rotation-degree" + iterationNumber);
+        nextIterationBlock.find("#rotation-degree" + iterationNumber).attr("aria-describedby", "rotation-degree-addon" + iterationNumber);
+
+        nextIterationBlock.find("#steps-per-shot-addon").attr("id", "steps-per-shot-addon" + iterationNumber);
+        nextIterationBlock.find("#steps-per-shot").attr("id", "steps-per-shot" + iterationNumber);
+        nextIterationBlock.find("#steps-per-shot" + iterationNumber).attr("aria-describedby", "steps-per-shot-addon" + iterationNumber);
+
+        nextIterationBlock.attr("hidden", false);
+
+        iterationNumber++;
+
+        return nextIterationBlock;
+    };
+
+    var createNextStayBlock = function () {
+        var nextIterationBlock = $("#iteration-stay-block").clone();
+
+        nextIterationBlock.prepend("<h2>" + (iterationNumber + 1) + "</h2>");
+
+        nextIterationBlock.attr("id", "iteration-stay-block" + iterationNumber);
+        nextIterationBlock.find("#stay-for").attr("id", "stay-for" + iterationNumber);
+        nextIterationBlock.find("input[name=time-scale-mode]").attr("name", "time-scale-mode" + iterationNumber);
+
+        nextIterationBlock.attr("hidden", false);
+
+        iterationNumber++;
+
+        return nextIterationBlock;
+    };
+
+    var validation = function () {
+        var result = true;
+
+        var pauseBetweenShutterMin = 5000;
+        var shutterMode = $("input[name=shutter-mode]:checked").val();
+        if(shutterMode === "bulb-mode") {
+            pauseBetweenShutterMin = 10000;
+        }
+
+        var pauseBetweenShutterVal = $("#pause-between-shutter").val();
+        if (parseInt(pauseBetweenShutterVal) < pauseBetweenShutterMin) {
+            $("#pause-between-shutter").val(pauseBetweenShutterMin);
+            result = false;
+            alert("Pause between shutter was set incorrectly.");
+        }
+
+        if (shutterMode === "bulb-mode") {
+            var shutterOpenTime = $("#shutter-open-time").val();
+            if (parseInt(shutterOpenTime) < 1000 || (parseInt(shutterOpenTime) > parseInt(pauseBetweenShutterVal) - 5000)) {
+                $("#shutter-open-time").val(2000);
+                result = false;
+                alert("Shutter open time was set incorrectly.");
+            }
+        }
+
+        return result;
+    };
+
+    $("#normal-mode").click(function () {
+        $("#shutter-delay-row").attr("hidden", true);
+        $("#pause-between-shutter").val(6000);
+        $("#shutter-open-time").val(2000);
+    });
+
+    $("#bulb-mode").click(function () {
+        $("#shutter-delay-row").attr("hidden", false);
+        $("#pause-between-shutter").val(15000);
+        $("#shutter-open-time").val(5000);
+    });
+
+    $("#add-move").click(function () {
+        var newIterationBlock = createNextMoveBlock();
+        $("#iterations").append(newIterationBlock);
+    });
+
+    $("#add-stay").click(function () {
+        var newIterationBlock = createNextStayBlock();
+        $("#iterations").append(newIterationBlock);
+    });
+
+    $("#go").click(function () {
+
+        if (validation() === false) {
+            return;
+        }
+
+        var requestParams = {};
+
+        var selectedCamera = $("#select-camera option:selected").text();
+        requestParams["selectedCamera"] = selectedCamera;
+
+        var shutterMode = $("input[name=shutter-mode]:checked").val();
+        requestParams["shutterMode"] = shutterMode;
+
+        var pauseBetweenShutter = $("#pause-between-shutter").val();
+        requestParams["pauseBetweenShutter"] = pauseBetweenShutter;
+
+        var shutterOpenTime = $("#shutter-open-time").val();
+        requestParams["shutterOpenTime"] = shutterOpenTime;
+
+        var iterations = $("#iterations").children();
+
+        var requiredTimeStatistics = 0;
+        var i = 0;
+        iterations.each(function () {
+            var iter = $(this);
+            var iterationId = iter.attr("id");
+
+            if (iterationId === ("iteration-move-block" + i)) {
+                var degreeValue = iter.find("#rotation-degree" + i).val();
+                if (degreeValue < 0) {
+                    degreeValue = 0;
+                }
+                else if (degreeValue > 10000) {
+                    degreeValue = 10000;
+                }
+                var direction = iter.find("#clockwise" + i).prop("checked") ? 1 : -1;
+                iter.find("#rotation-degree" + i).val(degreeValue);
+
+                var oneStep = iter.find("#steps-per-shot" + i).val();
+
+                requestParams["degree" + i] = degreeValue;
+                requestParams["direction" + i] = direction;
+                requestParams["step" + i] = oneStep;
+                requestParams["stay" + i] = 0;
+                requestParams["timeScale" + i] = 1;
+
+                requiredTimeStatistics += (parseInt(degreeValue) * 2048 / 360) / parseInt(oneStep) * parseInt(pauseBetweenShutter);
+            }
+            else if (iterationId === ("iteration-stay-block" + i)){
+                var timeScale = iter.find("input[name=time-scale-mode" + i + "]:checked").val();
+                requestParams["timeScale" + i] = timeScale;
+
+                var stayFor = iter.find("#stay-for" + i).val();
+                requestParams["stay" + i] = parseInt(stayFor);
+
+                requiredTimeStatistics += parseInt(stayFor) * parseInt(timeScale);
+            }
+
+            iter = iterations.next();
+            i++;
+        });
+        requestParams["iterationsNumber"] = iterations.length;
+
+        $.post("/go", requestParams);
+
+        $("#statistics-row").attr("hidden", false);
+        var hours   = parseFloat(requiredTimeStatistics) / 60000 / 60;
+        var minutes = (hours - Math.floor(hours)) * 60;
+        $("#statistics").text("It will take approximately " + Math.floor(hours) + " hours and " + Math.round(minutes) + " minutes to finish the sequence. Relax and have a glass of wine or beer.");
+    });
+
+</script>
+</body>
+</html>
