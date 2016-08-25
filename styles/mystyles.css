@@ -89,3 +89,12 @@ h1, h2, h3, h4 {
     width: 580px;
     height: 335px;
 }
+
+.controls-ovirview-image {
+    border-radius: 8px;
+    padding: 0.6em;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+    background: #ffffff;
+    width: 480px;
+    height: 1609px;
+}
