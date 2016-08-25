@@ -14,11 +14,6 @@ body {
     padding-bottom: 10px;
 }
 
-.container-fluid {
-    padding-right: 0px;
-    padding-left: 0px;
-}
-
 .page-header {
     margin-bottom: 45px;
 }
@@ -34,35 +29,6 @@ h1, h2, h3, h4 {
     line-height: 1.4;
     margin-bottom: 0.3125em;
     margin-top: 0;
-}
-
-.header-nav {
-    height: 75px;
-    margin-bottom: 0px;
-}
-
-.jumbotron{
-    border-radius: 0px;
-    margin-bottom: 25px;
-}
-
-.header-jumbotron {
-    position: relative;
-    background-image: url("../images/field2.jpg");
-    background-position: center top;
-    width: 100%;
-    height: 300px;
-    background-size: cover;
-    overflow: hidden;
-    text-align: left;
-}
-
-.footer-jumbotron {
-    margin-bottom: 0px;
-    border-top: solid 1px #eff0f1;
-    position: fixed;
-    width: 100%;
-    height: 200px;
 }
 
 .paragraph-header {
