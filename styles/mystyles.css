@@ -9,6 +9,10 @@ body {
     padding-bottom: 70px;
 }
 
+.container{
+    min-width:600px;
+}
+
 .navbar {
     padding-top: 10px;
     padding-bottom: 10px;
