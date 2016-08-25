@@ -24,141 +24,133 @@
         </div>
     </div>
 
-    <div>
-        <div class="row paragraph-header">
-            <div class="col-md-12">
-                <h2>Welcome to the Timelapse Project!</h2>
-            </div>
+    <div class="row paragraph-header">
+        <div class="col-md-12">
+            <h2>Welcome to the Timelapse Project!</h2>
         </div>
-        <div class="row paragraph">
-            <div class="col-lg-6 col-md-12 paragraph-intro">
-                <p>The Timelapse Project is the open source hardware and software project which is made to create dynamic time-lapse videos.</p>
-                <p>It allows you to specify the sequence of commands. For example: rotate a camera to 30 degrees clockwise, then stay at that position for 10 minutes, then rotate a camera to 90 degrees counter clockwise. This sequence can be of arbitrary length. This is the example of timelapse which has been made by using this device.</p>
-                <p>Using this instructions you should be able to make the device yourself. If after reading the instructions something remains unclear please ask, I will be happy to answer or correct these instructions.</p>
-            </div>
-            <div class="col-lg-6 col-md-12 paragraph-media">
-                <div class="video">
-                    <iframe width="550" height="309" src="https://www.youtube.com/embed/LD37sa3E49U" frameborder="0" allowfullscreen></iframe>
-                </div>
-            </div>
+    </div>
+    <div class="row paragraph">
+        <div class="col-lg-6 col-md-12 paragraph-intro">
+            <p>The Timelapse Project is the open source hardware and software project which is made to create dynamic time-lapse videos.</p>
+            <p>It allows you to specify the sequence of commands. For example: rotate a camera to 30 degrees clockwise, then stay at that position for 10 minutes, then rotate a camera to 90 degrees counter clockwise. This sequence can be of arbitrary length. This is the example of timelapse which has been made by using this device.</p>
+            <p>Using this instructions you should be able to make the device yourself. If after reading the instructions something remains unclear please ask, I will be happy to answer or correct these instructions.</p>
         </div>
-        <div class="row paragraph-text">
-            <div class="col-md-12">
-                <p>To make the device you will need:</p>
-                <ol>
-                    <li>WeMos D1 or WeMos D1 mini controller</li>
-                    <li>A stepper motor driver board</li>
-                    <li>A stepper motor</li>
-                    <li>A ballhead camera mount</li>
-                    <li>A rigid box</li>
-                    <li>Tools to make a hole in the box and mount the stepper motor inside the box</li>
-                    <li>Wires</li>
-                    <li>2 LEDs of different colours</li>
-                    <li>An infra red LED</li>
-                    <li>Resistors to limit the current which is going through the LEDs</li>
-                    <li>If you buy the controller boards without pre soldered pins you will need a soldering gun, solder and alcohol (or something else to clean the soldering parts).</li>
-                </ol>
-                <p>All this stuff can be bought from Chinese web stores and delivered to you by the post service.</p>
+        <div class="col-lg-6 col-md-12 paragraph-media">
+            <div class="video">
+                <iframe width="550" height="309" src="https://www.youtube.com/embed/LD37sa3E49U" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
     </div>
-
-    <div id="assembling-hardware">
-        <div class="row paragraph-header">
-            <div class="col-md-12">
-                <h2>Assembling hardware</h2>
-            </div>
-        </div>
-        <div class="row paragraph">
-            <div class="col-lg-6 col-md-12 paragraph-intro">
-                <p>Basically all you need to do to create a hardware part of the device is to connect pins using wires.</p>
-                <p>In the WeMos board you will find a number of pins. Most of the pins are programmable and have a positive polarity. These are the pins which are used in the project:</p>
-                <ul>
-                    <li>D7. - IR LED for controlling the camera.</li>
-                    <li>D1. - The LED which indicates that the wifi communication is established between the device and the wifi point.</li>
-                    <li>D6. - The LED which indicates that the power is on and the software is working.</li>
-                    <li>D2, D4, D3, D5. - Pins to control the stepper motor. This pins should be connected to the stepper motor driver board.</li>
-                </ul>
-            </div>
-            <div class="col-lg-6 col-md-12 paragraph-media">
-                <div class="video">
-                    <iframe width="550" height="309" src="https://www.youtube.com/embed/Svqt2nqabOE" frameborder="0" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-        <div class="row paragraph-text">
-            <div class="col-md-12">
-                <p>All LEDs should be connected to pins via resistor to limit the current. To calculate a resistor value the Ohm law could be used. Let's say we have a LED and it can handle a 20 mA current. Then:</p>
-                by the Ohm law <mark>V = I * R</mark> <br>
-                that means <mark>R = V / I</mark> <br>
-                <mark>3.5 / (20 / 1000) = 175 ohm</mark>
-                <p>It is not necessary to use a resistor with the exact value but the value should not be lower than the calculated value because the lifetime of the LED will be reduced. The value should not be much higher because the LED will be glowing dimmer.</p>
-                <p>Also mind the polarity because it could blow. Ground pins of the WeMos D1 controller should be connected to the LEDs minus (cathode), and pins D1, D6 and D7 to the LEDs plus (anode).</p>
-                <p>Most probably the way of connecting the stepper motor driver board should be very straightforward. If not, check the information about your driver in the internet.</p>
-                <ol>
-                    <li>It should have 4 input pins - these inputs should be connected to the pins D2, D4, D3, D5 of WeMos D1.</li>
-                    <li>It should have 2 DC power supply inputs</li>
-                    <li>It should have 4 output contacts to be connected to the stepper motor.</li>
-                </ol>
-            </div>
+    <div class="row paragraph-text">
+        <div class="col-md-12">
+            <p>To make the device you will need:</p>
+            <ol>
+                <li>WeMos D1 or WeMos D1 mini controller</li>
+                <li>A stepper motor driver board</li>
+                <li>A stepper motor</li>
+                <li>A ballhead camera mount</li>
+                <li>A rigid box</li>
+                <li>Tools to make a hole in the box and mount the stepper motor inside the box</li>
+                <li>Wires</li>
+                <li>2 LEDs of different colours</li>
+                <li>An infra red LED</li>
+                <li>Resistors to limit the current which is going through the LEDs</li>
+                <li>If you buy the controller boards without pre soldered pins you will need a soldering gun, solder and alcohol (or something else to clean the soldering parts).</li>
+            </ol>
+            <p>All this stuff can be bought from Chinese web stores and delivered to you by the post service.</p>
         </div>
     </div>
 
-    <div id="installing-software">
-        <div class="row paragraph-header">
-            <div class="col-md-12">
-                <h2>Installing software</h2>
-            </div>
+    <div class="row paragraph-header" id="assembling-hardware">
+        <div class="col-md-12">
+            <h2>Assembling hardware</h2>
         </div>
-        <div class="row paragraph-text">
-            <div class="col-md-12">
-                <p>After everything is wired together you need to install a software to the WeMos D1 board.</p>
-                <ol>
-                    <li>To do that Platformio should be installed to your computer. Install Platformio from the official site. You will find the installation manual there.</li>
-                    <li>Download the source code for the Timelapse project from this repository and unpack it somewhere.</li>
-                    <li>Enable the WiFi spot on your mobile phone.</li>
-                    <li>Open the file timelapse.ino in your favorite code editor and find these two lines of code:<br> <mark>const char *SSID = "phone_wifi_spot_name";</mark><br> <mark>const char *PASSWORD = "wifi_password";</mark><br> Change the values to the name and password of your WiFi spot.</li>
-                    <li>Connect WeMos D1 to your computer using the USB cable.</li>
-                    <li>Run the command prompt and navigate to the folder with the source code. In the command line type: <mark>platformio run --target upload</mark></li>
-                    <li>If everything is ok you should be able to see that the LED which is connected to D6 starts glowing. That means that the power is on and the software is working.</li>
-                    <li>Then the LED connected to D1 should start glowing. If so WeMos D1 is successfully connected to your phone's spot.</li>
-                    <li>Now to control your device from your phone you should find out the IP address of your device. Open the WiFi spot settings on your phone and look for the IP address of the device that is connected to it.</li>
-                    <li>Open a web browser on your phone and type in the IP address you just found into the URL string.</li>
-                    <li><a href="timelapse.html">You should be able to see this page</a>.</li>
-                </ol>
+    </div>
+    <div class="row paragraph">
+        <div class="col-lg-6 col-md-12 paragraph-intro">
+            <p>Basically all you need to do to create a hardware part of the device is to connect pins using wires.</p>
+            <p>In the WeMos board you will find a number of pins. Most of the pins are programmable and have a positive polarity. These are the pins which are used in the project:</p>
+            <ul>
+                <li>D7. - IR LED for controlling the camera.</li>
+                <li>D1. - The LED which indicates that the wifi communication is established between the device and the wifi point.</li>
+                <li>D6. - The LED which indicates that the power is on and the software is working.</li>
+                <li>D2, D4, D3, D5. - Pins to control the stepper motor. This pins should be connected to the stepper motor driver board.</li>
+            </ul>
+        </div>
+        <div class="col-lg-6 col-md-12 paragraph-media">
+            <div class="video">
+                <iframe width="550" height="309" src="https://www.youtube.com/embed/Svqt2nqabOE" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
     </div>
+    <div class="row paragraph-text">
+        <div class="col-md-12">
+            <p>All LEDs should be connected to pins via resistor to limit the current. To calculate a resistor value the Ohm law could be used. Let's say we have a LED and it can handle a 20 mA current. Then:</p>
+            by the Ohm law <mark>V = I * R</mark> <br>
+            that means <mark>R = V / I</mark> <br>
+            <mark>3.5 / (20 / 1000) = 175 ohm</mark>
+            <p>It is not necessary to use a resistor with the exact value but the value should not be lower than the calculated value because the lifetime of the LED will be reduced. The value should not be much higher because the LED will be glowing dimmer.</p>
+            <p>Also mind the polarity because it could blow. Ground pins of the WeMos D1 controller should be connected to the LEDs minus (cathode), and pins D1, D6 and D7 to the LEDs plus (anode).</p>
+            <p>Most probably the way of connecting the stepper motor driver board should be very straightforward. If not, check the information about your driver in the internet.</p>
+            <ol>
+                <li>It should have 4 input pins - these inputs should be connected to the pins D2, D4, D3, D5 of WeMos D1.</li>
+                <li>It should have 2 DC power supply inputs</li>
+                <li>It should have 4 output contacts to be connected to the stepper motor.</li>
+            </ol>
+        </div>
+    </div>
 
-    <div id="controls-overview">
-        <div class="row paragraph-header">
-            <div class="col-md-12">
-                <h2>Control page overview</h2>
+    <div class="row paragraph-header" id="installing-software">
+        <div class="col-md-12">
+            <h2>Installing software</h2>
+        </div>
+    </div>
+    <div class="row paragraph-text">
+        <div class="col-md-12">
+            <p>After everything is wired together you need to install a software to the WeMos D1 board.</p>
+            <ol>
+                <li>To do that Platformio should be installed to your computer. Install Platformio from the official site. You will find the installation manual there.</li>
+                <li>Download the source code for the Timelapse project from this repository and unpack it somewhere.</li>
+                <li>Enable the WiFi spot on your mobile phone.</li>
+                <li>Open the file timelapse.ino in your favorite code editor and find these two lines of code:<br> <mark>const char *SSID = "phone_wifi_spot_name";</mark><br> <mark>const char *PASSWORD = "wifi_password";</mark><br> Change the values to the name and password of your WiFi spot.</li>
+                <li>Connect WeMos D1 to your computer using the USB cable.</li>
+                <li>Run the command prompt and navigate to the folder with the source code. In the command line type: <mark>platformio run --target upload</mark></li>
+                <li>If everything is ok you should be able to see that the LED which is connected to D6 starts glowing. That means that the power is on and the software is working.</li>
+                <li>Then the LED connected to D1 should start glowing. If so WeMos D1 is successfully connected to your phone's spot.</li>
+                <li>Now to control your device from your phone you should find out the IP address of your device. Open the WiFi spot settings on your phone and look for the IP address of the device that is connected to it.</li>
+                <li>Open a web browser on your phone and type in the IP address you just found into the URL string.</li>
+                <li><a href="timelapse.html">You should be able to see this page</a>.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="row paragraph-header" id="controls-overview">
+        <div class="col-md-12">
+            <h2>Control page overview</h2>
+        </div>
+    </div>
+    <div class="row paragraph">
+        <div class="col-lg-6 col-md-12 paragraph-intro">
+            <ol>
+                <li>To be able to operate cameras of different manufacturers you need to pick your manufacturer in the drop down list.</li>
+                <li>Choose between the normal mode and the bulb mode. The normal mode is when the shutter speed settings is specifyed in the camera. Bulb mode is when the external device tells the camera when to close the shutter. Use the bulb mode if you need a long exposure. Usually 1 second or more. To use the bulb mode you should activate it in your camera. The bulb mode in my camera activates when I'm increasing the exposure to the maximum value. Always switch your camera to the manual mode when shooting timelapses.</li>
+                <li>The shooting rate is the delay between each shot. The minimal posible value depends on your camera. If the value will be too small your camera will not be able to shoot at that rate.</li>
+                <li>The shutter open time is the exposure time. It is using only in the bulb mode. Keep in mind that a camera might make photos much slower when the exposure is high. So usually you would want to make this value much smaller then the shooting rate value.</li>
+                <li>Then you have <mark>Add stay</mark> and <mark>Add move</mark>. By pressing these buttons you are specifying the sequence of commands which your device will be making.</li>
+                <li>In the <mark>Stay</mark> iteration you are specifying how long the device will be staying without rotation while shooting at the same time.</li>
+                <li>In the <mark>Move</mark> iteration you are specifying the rotation direction, the rotation angle and how many steps the stepper motor will be making before taking each picture.</li>
+                <li>The Go! button sends your commands to the device and initiates shooting. After that the device will not respond to you commands till the job will be finished. That is made to make sure there will be no time deviations between shots caused by the client-server communication.</li>
+                <li>After you press Go! button the IR LED which is intended to control you camera should start blinking. You can see it blinking using the camera built in your phone. Look through the phone camera at the IR LED. Unlike other LEDs IR LEDs usually have a very focused and narrow beam so you should look directly in front of it.</li>
+            </ol>
+        </div>
+        <div class="col-lg-6 col-md-12 paragraph-media">
+            <div class="controls-ovirview-image">
+                <img width="460" src="https://github.com/carbone-kid/Timelapse_Project/raw/gh-pages/controls_overview.jpg" alt="The control page screenshot">
             </div>
         </div>
-        <div class="row paragraph">
-            <div class="col-lg-6 col-md-12 paragraph-intro">
-                <ol>
-                    <li>To be able to operate cameras of different manufacturers you need to pick your manufacturer in the drop down list.</li>
-                    <li>Choose between the normal mode and the bulb mode. The normal mode is when the shutter speed settings is specifyed in the camera. Bulb mode is when the external device tells the camera when to close the shutter. Use the bulb mode if you need a long exposure. Usually 1 second or more. To use the bulb mode you should activate it in your camera. The bulb mode in my camera activates when I'm increasing the exposure to the maximum value. Always switch your camera to the manual mode when shooting timelapses.</li>
-                    <li>The shooting rate is the delay between each shot. The minimal posible value depends on your camera. If the value will be too small your camera will not be able to shoot at that rate.</li>
-                    <li>The shutter open time is the exposure time. It is using only in the bulb mode. Keep in mind that a camera might make photos much slower when the exposure is high. So usually you would want to make this value much smaller then the shooting rate value.</li>
-                    <li>Then you have <mark>Add stay</mark> and <mark>Add move</mark>. By pressing these buttons you are specifying the sequence of commands which your device will be making.</li>
-                    <li>In the <mark>Stay</mark> iteration you are specifying how long the device will be staying without rotation while shooting at the same time.</li>
-                    <li>In the <mark>Move</mark> iteration you are specifying the rotation direction, the rotation angle and how many steps the stepper motor will be making before taking each picture.</li>
-                    <li>The Go! button sends your commands to the device and initiates shooting. After that the device will not respond to you commands till the job will be finished. That is made to make sure there will be no time deviations between shots caused by the client-server communication.</li>
-                    <li>After you press Go! button the IR LED which is intended to control you camera should start blinking. You can see it blinking using the camera built in your phone. Look through the phone camera at the IR LED. Unlike other LEDs IR LEDs usually have a very focused and narrow beam so you should look directly in front of it.</li>
-                </ol>
-            </div>
-            <div class="col-lg-6 col-md-12 paragraph-media">
-                <div class="controls-ovirview-image">
-                    <img width="460" src="https://github.com/carbone-kid/Timelapse_Project/raw/gh-pages/controls_overview.jpg" alt="The control page screenshot">
-                </div>
-            </div>
-        </div>
-        <div class="row paragraph-text">
-            <div class="col-md-12">
-            </div>
+    </div>
+    <div class="row paragraph-text">
+        <div class="col-md-12">
         </div>
     </div>
 
