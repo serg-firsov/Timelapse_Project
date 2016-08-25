@@ -1,0 +1,91 @@
+body {
+    color: #393d40;
+    font-family: "Open Sans",Helvetica,Arial,sans-serif;
+    -moz-font-feature-settings: "kern";
+    font-feature-settings: "kern";
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5;
+    padding-bottom: 70px;
+}
+
+.navbar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.container-fluid {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.page-header {
+    margin-bottom: 45px;
+}
+
+h1, h2, h3, h4 {
+    color: #575a5b;
+    font-family: "Open Sans",Helvetica,Arial,sans-serif;
+    font-weight: 300;
+    line-height: 1.4;
+    margin-bottom: 0.3125em;
+    margin-top: 0;
+}
+
+.header-nav {
+    height: 75px;
+    margin-bottom: 0px;
+}
+
+.jumbotron{
+    border-radius: 0px;
+    margin-bottom: 25px;
+}
+
+.header-jumbotron {
+    position: relative;
+    background-image: url("../images/field2.jpg");
+    background-position: center top;
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    overflow: hidden;
+    text-align: left;
+}
+
+.footer-jumbotron {
+    margin-bottom: 0px;
+    border-top: solid 1px #eff0f1;
+    position: fixed;
+    width: 100%;
+    height: 200px;
+}
+
+.paragraph-header {
+    margin-bottom: 30px;
+}
+
+.paragraph {
+    padding-bottom: 20px;
+}
+
+.paragraph-intro {
+
+}
+
+.paragraph-media {
+
+}
+
+.paragraph-text {
+    padding-bottom: 40px;
+}
+
+.video {
+    border-radius: 8px;
+    padding: 0.6em;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+    background: #ffffff;
+    width: 580px;
+    height: 335px;
+}
