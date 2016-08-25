@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
-    <link href="./styles/mystyles.css" rel="stylesheet">
+    <link href="styles/mystyles.css" rel="stylesheet">
 
     <title>Timelapse Project</title>
 </head>
@@ -24,9 +24,9 @@
     <div class="page-header">
         <h1>Timelapse Project <small>by Sergey Firsov</small></h1>
         <div class="text-right">
-            <a href="https://github.com/carbone-kid/Timelapse_Project" class="btn btn-success">View on GitHub</a>
-            <a href="https://github.com/carbone-kid/Timelapse_Project/zipball/master" class="btn btn-primary">Download .zip</a>
-            <a href="https://github.com/carbone-kid/Timelapse_Project/tarball/master" class="btn btn-primary">Download .tar.gz</a>
+            <a href="https://github.com/carbone-kid/Timelapse_Project" class="btn btn-success btn-margin">View on GitHub</a>
+            <a href="https://github.com/carbone-kid/Timelapse_Project/zipball/master" class="btn btn-primary btn-margin">Download .zip</a>
+            <a href="https://github.com/carbone-kid/Timelapse_Project/tarball/master" class="btn btn-primary btn-margin">Download .tar.gz</a>
         </div>
     </div>
 
@@ -37,14 +37,14 @@
             </div>
         </div>
         <div class="row paragraph">
-            <div class="col-sm-5 paragraph-intro">
+            <div class="col-sm-6 paragraph-intro">
                 <p>The Timelapse Project is the open source hardware and software project which is made to create dynamic time-lapse videos.</p>
                 <p>It allows you to specify the sequence of commands. For example: rotate a camera to 30 degrees clockwise, then stay at that position for 10 minutes, then rotate a camera to 90 degrees counter clockwise. This sequence can be of arbitrary length. This is the example of timelapse which has been made by using this device.</p>
                 <p>Using this instructions you should be able to make the device yourself. If after reading the instructions something remains unclear please ask, I will be happy to answer or correct these instructions.</p>
             </div>
             <div class="col-sm-6 paragraph-media">
                 <div class="video">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/LD37sa3E49U" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="550" height="309" src="https://www.youtube.com/embed/LD37sa3E49U" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -76,25 +76,25 @@
             </div>
         </div>
         <div class="row paragraph">
-            <div class="col-sm-5 paragraph-intro">
+            <div class="col-sm-6 paragraph-intro">
                 <p>Basically all you need to do to create a hardware part of the device is to connect pins using wires.</p>
                 <p>In the WeMos board you will find a number of pins. Most of the pins are programmable and have a positive polarity. These are the pins which are used in the project:</p>
                 <ul>
                     <li>D7. - IR LED for controlling the camera.</li>
-                    <li>D1. - The led which indicates that the wifi communication is established between the device and the wifi point.</li>
-                    <li>D6. - The led which indicates that the power is on and the software is working.</li>
+                    <li>D1. - The LED which indicates that the wifi communication is established between the device and the wifi point.</li>
+                    <li>D6. - The LED which indicates that the power is on and the software is working.</li>
                     <li>D2, D4, D3, D5. - Pins to control the stepper motor. This pins should be connected to the stepper motor driver board.</li>
                 </ul>
             </div>
             <div class="col-sm-6 paragraph-media">
                 <div class="video">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Svqt2nqabOE" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="550" height="309" src="https://www.youtube.com/embed/Svqt2nqabOE" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
         <div class="row paragraph-text">
             <div class="col-sm-12">
-                <p>All leds should be connected to pins via resistor to limit the current. To calculate a resistor value the Ohm law could be used. Let's say we have a led and it can handle a 20 mA current. Then:</p>
+                <p>All LEDs should be connected to pins via resistor to limit the current. To calculate a resistor value the Ohm law could be used. Let's say we have a LED and it can handle a 20 mA current. Then:</p>
                 by the Ohm law <mark>V = I * R</mark> <br>
                 that means <mark>R = V / I</mark> <br>
                 <mark>3.5 / (20 / 1000) = 175 ohm</mark>
@@ -130,7 +130,7 @@
                     <li>Then the LED connected to D1 should start glowing. If so WeMos D1 is successfully connected to your phone's spot.</li>
                     <li>Now to control your device from your phone you should find out the IP address of your device. Open the WiFi spot settings on your phone and look for the IP address of the device that is connected to it.</li>
                     <li>Open a web browser on your phone and type in the IP address you just found into the URL string.</li>
-                    <li>You should see this page.</li>
+                    <li><a href="timelapse.html">You should be able to see this page</a>.</li>
                 </ol>
             </div>
         </div>
@@ -145,15 +145,15 @@
         <div class="row paragraph">
             <div class="col-sm-6 paragraph-intro">
                 <ol>
-                    <li>To be able to operate cameras of different manufacturers you need to pick your manufacturer in drop down list.</li>
-                    <li>Choose between normal mode and bulb mode. The normal mode is when the shutter speed settings is specifyed in the camera. Bulb mode is when the external device tells camera when to close the shutter. Use bulb mode if you need long exposure. Usually 1 second or more. To use bulb mode you should activate it in your camera. The bulb mode in my camera activates when I'm increasing the exposure to the maximum. Always use manual mode in your camera when shooting timelapses.</li>
-                    <li>Shooting rate is the delay between each shot. The minimal posible value depends on your camera. If the value will be too small your camera will not be able to shoot at that rate.</li>
-                    <li>Shutter open time is the exposure time in the bulb mode. Keep in mind that a camera might save photos much slower when the exposure is high. So usually you would want to make this value much smaller then the shooting rate value.</li>
-                    <li>Then you have Add stay and Add move. By pressing these buttons you are specifying the sequence of stand still iterations and rotation iterations which your device will be making.</li>
-                    <li>In the Stay iteration you are specifying how long the device will be staying still and shooting at that direction.</li>
-                    <li>In the Move iteration you are specifying the rotation direction, the rotation angle and how many steps the stepper motor will make before taking each picture.</li>
-                    <li>The Go! button sends your commands to the device and starts shooting. After that the device will not respond to you commands till it finishes the job. That is made to make sure there will be no time deviations between shots caused by the client-server communication.</li>
-                    <li>After you press Go! button the IR led which is intend to control you camera should start blinking. You can see it blinking using the camera built in your phone. Look through the phone camera at the IR led. Unlike other leds IR leds usually have a very focused and narrow beam so you should look directly in front of it.</li>
+                    <li>To be able to operate cameras of different manufacturers you need to pick your manufacturer in the drop down list.</li>
+                    <li>Choose between the normal mode and the bulb mode. The normal mode is when the shutter speed settings is specifyed in the camera. Bulb mode is when the external device tells the camera when to close the shutter. Use the bulb mode if you need a long exposure. Usually 1 second or more. To use the bulb mode you should activate it in your camera. The bulb mode in my camera activates when I'm increasing the exposure to the maximum value. Always switch your camera to the manual mode when shooting timelapses.</li>
+                    <li>The shooting rate is the delay between each shot. The minimal posible value depends on your camera. If the value will be too small your camera will not be able to shoot at that rate.</li>
+                    <li>The shutter open time is the exposure time. It is using only in the bulb mode. Keep in mind that a camera might make photos much slower when the exposure is high. So usually you would want to make this value much smaller then the shooting rate value.</li>
+                    <li>Then you have <mark>Add stay</mark> and <mark>Add move</mark>. By pressing these buttons you are specifying the sequence of commands which your device will be making.</li>
+                    <li>In the <mark>Stay</mark> iteration you are specifying how long the device will be staying without rotation while shooting at the same time.</li>
+                    <li>In the <mark>Move</mark> iteration you are specifying the rotation direction, the rotation angle and how many steps the stepper motor will be making before taking each picture.</li>
+                    <li>The Go! button sends your commands to the device and initiates shooting. After that the device will not respond to you commands till the job will be finished. That is made to make sure there will be no time deviations between shots caused by the client-server communication.</li>
+                    <li>After you press Go! button the IR LED which is intended to control you camera should start blinking. You can see it blinking using the camera built in your phone. Look through the phone camera at the IR LED. Unlike other LEDs IR LEDs usually have a very focused and narrow beam so you should look directly in front of it.</li>
                 </ol>
             </div>
             <div class="col-sm-6 paragraph-media">
@@ -176,7 +176,7 @@
     </div>
 </div>
 
-<script src="./scripts/index.js"></script>
+<script src="scripts/index.js"></script>
 
 </body>
 </html>

@@ -3,7 +3,7 @@ body {
     font-family: "Open Sans",Helvetica,Arial,sans-serif;
     -moz-font-feature-settings: "kern";
     font-feature-settings: "kern";
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 300;
     line-height: 1.5;
     padding-bottom: 70px;
@@ -21,6 +21,10 @@ body {
 
 .page-header {
     margin-bottom: 45px;
+}
+
+.page-header h1{
+    margin-bottom: 5px;
 }
 
 h1, h2, h3, h4 {
@@ -86,8 +90,8 @@ h1, h2, h3, h4 {
     padding: 0.6em;
     box-shadow: 0 1px 1px rgba(0,0,0,0.3);
     background: #ffffff;
-    width: 580px;
-    height: 335px;
+    width: 570px;
+    height: 325px;
 }
 
 .controls-ovirview-image {
@@ -97,4 +101,8 @@ h1, h2, h3, h4 {
     background: #ffffff;
     width: 480px;
     height: 1609px;
+}
+
+.btn-margin {
+    margin-top: 5px;
 }
