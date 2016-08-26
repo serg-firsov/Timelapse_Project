@@ -2,13 +2,21 @@
  * Created by Sergey Firsov on 25.08.2016.
  */
 
-$(document).ready(function () {
-    if(window.innerWidth < 900) {
+var beResponcive = function () {
+    if($(window).width() < 900) {
         $(".btn-responsive").hide();
     }
     else {
         $(".btn-responsive").show();
     }
+};
+
+$(document).ready(function () {
+    beResponcive();
+});
+
+$(window).resize(function () {
+    beResponcive();
 });
 
 function onClickWelcome() {
