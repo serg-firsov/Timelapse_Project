@@ -26,6 +26,10 @@ h1, h2, h3, h4 {
     h1, h2, h3, h4 {
         line-height: 1.4;
     }
+
+    .btn-font {
+        font-size: 18px;
+    }
 }
 @media (max-width: 900px) {
     body {
@@ -40,6 +44,10 @@ h1, h2, h3, h4 {
     h2 {
         text-align: center;
         font-size: 22px;
+    }
+
+    .btn-font {
+        font-size: 16px;
     }
 }
 
@@ -89,6 +97,15 @@ h1, h2, h3, h4 {
     height: 329px;
 }
 
+.controls-ovirview-image {
+    border-radius: 8px;
+    padding: 0.6em;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+    background: #ffffff;
+    width: 480px;
+    height: 1609px;
+}
+
 @media (min-width: 900px) {
     iframe {
         width: 550px;
@@ -99,33 +116,36 @@ h1, h2, h3, h4 {
         width: 570px;
         height: 329px;
     }
+
+    .controls-ovirview-image {
+        width: 480px;
+        height: 1609px;
+    }
 }
 
 @media (max-width: 900px) {
     iframe {
-        width: 256px;
-        height: 143px;
+        width: 276px;
+        height: 155px;
     }
 
     .video {
-        width: 276px;
-        height: 163px;
+        width: 296px;
+        height: 175px;
+    }
+
+    .controls-ovirview-image {
+        width: 296px;
+        height: 992px;
+    }
+
+    img {
+        max-width: 276px;
     }
 }
 
-.controls-ovirview-image {
-    border-radius: 8px;
-    padding: 0.6em;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.3);
-    background: #ffffff;
-    width: 480px;
-    height: 1609px;
-}
 
 .btn-margin {
     margin-top: 5px;
-}
-
-.btn-font {
-    font-size: 18px;
+    hidden: true;
 }
