@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
 
@@ -32,19 +32,19 @@
         </div>
     </div>
     <div class="row paragraph">
-        <div class="col-lg-6 col-md-12 paragraph-intro">
+        <div class="col-lg-6 col-md-12 paragraph-intro text-justify">
             <p>The Timelapse Project is the open source hardware and software project which is made to create dynamic time-lapse videos.</p>
             <p>It allows you to specify the sequence of commands. For example: rotate a camera to 30 degrees clockwise, then stay at that position for 10 minutes, then rotate a camera to 90 degrees counter clockwise. This sequence can be of arbitrary length. This is the example of timelapse which has been made by using this device.</p>
             <p>Using this instructions you should be able to make the device yourself. If after reading the instructions something remains unclear please ask, I will be happy to answer or correct these instructions.</p>
         </div>
         <div class="col-lg-6 col-md-12 paragraph-media">
             <div class="video">
-                <iframe width="550" height="309" src="https://www.youtube.com/embed/LD37sa3E49U" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/LD37sa3E49U" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
     </div>
     <div class="row paragraph-text">
-        <div class="col-md-12">
+        <div class="col-md-12 text-justify">
             <p>To make the device you will need:</p>
             <ol>
                 <li>WeMos D1 or WeMos D1 mini controller</li>
@@ -69,7 +69,7 @@
         </div>
     </div>
     <div class="row paragraph">
-        <div class="col-lg-6 col-md-12 paragraph-intro">
+        <div class="col-lg-6 col-md-12 paragraph-intro text-justify">
             <p>Basically all you need to do to create a hardware part of the device is to connect pins using wires.</p>
             <p>In the WeMos board you will find a number of pins. Most of the pins are programmable and have a positive polarity. These are the pins which are used in the project:</p>
             <ul>
@@ -86,11 +86,11 @@
         </div>
     </div>
     <div class="row paragraph-text">
-        <div class="col-md-12">
+        <div class="col-md-12 text-justify">
             <p>All LEDs should be connected to pins via resistor to limit the current. To calculate a resistor value the Ohm law could be used. Let's say we have a LED and it can handle a 20 mA current. Then:</p>
             by the Ohm law <mark>V = I * R</mark> <br>
             that means <mark>R = V / I</mark> <br>
-            <mark>3.5 / (20 / 1000) = 175 ohm</mark>
+            <mark>3.5 / (20 / 1000) = 175 ohm</mark> <br>
             <p>It is not necessary to use a resistor with the exact value but the value should not be lower than the calculated value because the lifetime of the LED will be reduced. The value should not be much higher because the LED will be glowing dimmer.</p>
             <p>Also mind the polarity because it could blow. Ground pins of the WeMos D1 controller should be connected to the LEDs minus (cathode), and pins D1, D6 and D7 to the LEDs plus (anode).</p>
             <p>Most probably the way of connecting the stepper motor driver board should be very straightforward. If not, check the information about your driver in the internet.</p>
@@ -108,7 +108,7 @@
         </div>
     </div>
     <div class="row paragraph-text">
-        <div class="col-md-12">
+        <div class="col-md-12 text-justify">
             <p>After everything is wired together you need to install a software to the WeMos D1 board.</p>
             <ol>
                 <li>To do that Platformio should be installed to your computer. Install Platformio from the official site. You will find the installation manual there.</li>
@@ -116,7 +116,7 @@
                 <li>Enable the WiFi spot on your mobile phone.</li>
                 <li>Open the file timelapse.ino in your favorite code editor and find these two lines of code:<br> <mark>const char *SSID = "phone_wifi_spot_name";</mark><br> <mark>const char *PASSWORD = "wifi_password";</mark><br> Change the values to the name and password of your WiFi spot.</li>
                 <li>Connect WeMos D1 to your computer using the USB cable.</li>
-                <li>Run the command prompt and navigate to the folder with the source code. In the command line type: <mark>platformio run --target upload</mark></li>
+                <li>Run the command prompt and navigate to the folder with the source code. In the command line type:<br> <mark>platformio run --target upload</mark></li>
                 <li>If everything is ok you should be able to see that the LED which is connected to D6 starts glowing. That means that the power is on and the software is working.</li>
                 <li>Then the LED connected to D1 should start glowing. If so WeMos D1 is successfully connected to your phone's spot.</li>
                 <li>Now to control your device from your phone you should find out the IP address of your device. Open the WiFi spot settings on your phone and look for the IP address of the device that is connected to it.</li>
@@ -132,7 +132,7 @@
         </div>
     </div>
     <div class="row paragraph">
-        <div class="col-lg-6 col-md-12 paragraph-intro">
+        <div class="col-lg-6 col-md-12 paragraph-intro text-justify">
             <ol>
                 <li>To be able to operate cameras of different manufacturers you need to pick your manufacturer in the drop down list.</li>
                 <li>Choose between the normal mode and the bulb mode. The normal mode is when the shutter speed settings is specifyed in the camera. Bulb mode is when the external device tells the camera when to close the shutter. Use the bulb mode if you need a long exposure. Usually 1 second or more. To use the bulb mode you should activate it in your camera. The bulb mode in my camera activates when I'm increasing the exposure to the maximum value. Always switch your camera to the manual mode when shooting timelapses.</li>

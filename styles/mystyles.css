@@ -29,7 +29,7 @@ body {
 h1, h2, h3, h4 {
     color: #575a5b;
     font-family: "Open Sans",Helvetica,Arial,sans-serif;
-    font-weight: 300;
+    font-weight: 600;
     line-height: 1.4;
     margin-bottom: 0.3125em;
     margin-top: 0;
@@ -61,7 +61,31 @@ h1, h2, h3, h4 {
     box-shadow: 0 1px 1px rgba(0,0,0,0.3);
     background: #ffffff;
     width: 570px;
-    height: 325px;
+    height: 329px;
+}
+
+@media (min-width: 900px) {
+    iframe {
+        width: 550px;
+        height: 309px;
+    }
+
+    .video {
+        width: 570px;
+        height: 329px;
+    }
+}
+
+@media (max-width: 900px) {
+    iframe {
+        width: 400px;
+        height: 224px;
+    }
+
+    .video {
+        width: 420px;
+        height: 244px;
+    }
 }
 
 .controls-ovirview-image {
