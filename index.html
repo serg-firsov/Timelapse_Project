@@ -47,9 +47,9 @@
         <div class="col-md-12 text-justify">
             <p>To make the device you will need:</p>
             <ol>
-                <li>WeMos D1 or WeMos D1 mini controller</li>
-                <li>A stepper motor driver board</li>
-                <li>A stepper motor</li>
+                <li><mark>WeMos D1</mark> or WeMos D1 mini controller</li>
+                <li>A stepper motor driver board with <mark>ULN2003</mark> chip.</li>
+                <li>A stepper motor <mark>28BYJ-48</mark>.</li>
                 <li>A ballhead camera mount</li>
                 <li>A rigid box</li>
                 <li>Tools to make a hole in the box and mount the stepper motor inside the box</li>
@@ -59,13 +59,14 @@
                 <li>Resistors to limit the current which is going through the LEDs</li>
                 <li>If you buy the controller boards without pre soldered pins you will need a soldering gun, solder and alcohol (or something else to clean the soldering parts).</li>
             </ol>
+            <p>The stepper motor I've used though is not very good for this application as has a shaft play. I had to load the motor shaft on a rubber band to get rid of it. You can use any stepper motor and a stepper motor driver you like. The components I listed are only the reference point.</p>
             <p>All this stuff can be bought from Chinese web stores and delivered to you by the post service.</p>
         </div>
     </div>
 
     <div class="row paragraph-header" id="assembling-hardware">
         <div class="col-md-12">
-            <h2>Assembling hardware</h2>
+            <h2>Assembling Hardware</h2>
         </div>
     </div>
     <div class="row paragraph">
@@ -87,32 +88,41 @@
     </div>
     <div class="row paragraph-text">
         <div class="col-md-12 text-justify">
-            <p>All LEDs should be connected to pins via resistor to limit the current. To calculate a resistor value the Ohm law could be used. Let's say we have a LED and it can handle a 20 mA current. Then:</p>
-            by the Ohm law <mark>V = I * R</mark> <br>
-            that means <mark>R = V / I</mark> <br>
-            <mark>3.5 / (20 / 1000) = 175 ohm</mark> <br>
-            <p>It is not necessary to use a resistor with the exact value but the value should not be lower than the calculated value because the lifetime of the LED will be reduced. The value should not be much higher because the LED will be glowing dimmer.</p>
-            <p>Also mind the polarity because it could blow. Ground pins of the WeMos D1 controller should be connected to the LEDs minus (cathode), and pins D1, D6 and D7 to the LEDs plus (anode).</p>
+            <p>All LEDs should be connected to pins via resistor to limit the current. To calculate a resistor value the Ohm law could be used. Let's say we have a LED and it can handle a 20 mA current and we have 3.5 volts DC on the controller pins. Then:</p>
+            <mark>Resistance = Volts / Ampers</mark> <br>
+            <mark>3.5 / (20 / 1000) = 175 Ohm</mark> <br>
+            <p>It is not necessary to use a resistor with the exact value but the value should not be lower than the calculated value because the lifetime of the LED will be reduced.</p>
+            <p>Also mind the polarity because it can damage the LED. Ground pins of the WeMos D1 controller should be connected to the LEDs minus (cathode), and pins D1, D6 and D7 to the LEDs plus (anode).</p>
             <p>Most probably the way of connecting the stepper motor driver board should be very straightforward. If not, check the information about your driver in the internet.</p>
             <ol>
                 <li>It should have 4 input pins - these inputs should be connected to the pins D2, D4, D3, D5 of WeMos D1.</li>
                 <li>It should have 2 DC power supply inputs</li>
                 <li>It should have 4 output contacts to be connected to the stepper motor.</li>
             </ol>
+            <p>The <mark>ULN2003</mark> chip based stepper motor driver connects this way:</p>
+            <ol>
+                <li>Pin D2 of WeMos to ----> pin IN1 of ULN2003</li>
+                <li>Pin D3 of WeMos to ----> pin IN2 of ULN2003</li>
+                <li>Pin D4 of WeMos to ----> pin IN3 of ULN2003</li>
+                <li>Pin D5 of WeMos to ----> pin IN4 of ULN2003</li>
+                <li>Pin 5V of WeMos to ----> pin + of ULN2003</li>
+                <li>Pin GND of WeMos to ----> pin - of ULN2003</li>
+            </ol>
         </div>
     </div>
 
     <div class="row paragraph-header" id="installing-software">
         <div class="col-md-12">
-            <h2>Installing software</h2>
+            <h2>Installing Software</h2>
         </div>
     </div>
     <div class="row paragraph-text">
         <div class="col-md-12 text-justify">
             <p>After everything is wired together you need to install a software to the WeMos D1 board.</p>
             <ol>
-                <li>To do that Platformio should be installed to your computer. Install Platformio from the official site. You will find the installation manual there.</li>
-                <li>Download the source code for the Timelapse project from this repository and unpack it somewhere.</li>
+                <li>Follow the instructions <a href="http://www.wemos.cc/tutorial/get_started_in_arduino.html" target="_blank">Get started in Arduino</a> in the WeMos official site to install the driver and the libraries.</li>
+                <li>Install Platformio from the <a href="http://platformio.org/get-started/cli" target="_blank">official site</a>. You will find the installation manual there. The version used in the project is 2.9.1.</li>
+                <li>Download the source code for the Timelapse project from <a href="https://github.com/carbone-kid/Timelapse_Project" target="_blank">this repository</a> and unpack it somewhere.</li>
                 <li>Enable the WiFi spot on your mobile phone.</li>
                 <li>Open the file timelapse.ino in your favorite code editor and find these two lines of code:<br> <mark>const char *SSID = "phone_wifi_spot_name";</mark><br> <mark>const char *PASSWORD = "wifi_password";</mark><br> Change the values to the name and password of your WiFi spot.</li>
                 <li>Connect WeMos D1 to your computer using the USB cable.</li>
@@ -121,18 +131,18 @@
                 <li>Then the LED connected to D1 should start glowing. If so WeMos D1 is successfully connected to your phone's spot.</li>
                 <li>Now to control your device from your phone you should find out the IP address of your device. Open the WiFi spot settings on your phone and look for the IP address of the device that is connected to it.</li>
                 <li>Open a web browser on your phone and type in the IP address you just found into the URL string.</li>
-                <li><a href="timelapse.html">You should be able to see this page</a>.</li>
+                <li><a href="timelapse.html" target="_blank">You should be able to see this page</a>.</li>
             </ol>
         </div>
     </div>
 
     <div class="row paragraph-header" id="controls-overview">
         <div class="col-md-12">
-            <h2>Control page overview</h2>
+            <h2>Control Page Overview</h2>
         </div>
     </div>
     <div class="row paragraph">
-        <div class="col-lg-6 col-md-12 paragraph-intro text-justify">
+        <div class="col-lg-7 col-md-12 paragraph-intro text-justify">
             <ol>
                 <li>To be able to operate cameras of different manufacturers you need to pick your manufacturer in the drop down list.</li>
                 <li>Choose between the normal mode and the bulb mode. The normal mode is when the shutter speed settings is specifyed in the camera. Bulb mode is when the external device tells the camera when to close the shutter. Use the bulb mode if you need a long exposure. Usually 1 second or more. To use the bulb mode you should activate it in your camera. The bulb mode in my camera activates when I'm increasing the exposure to the maximum value. Always switch your camera to the manual mode when shooting timelapses.</li>
@@ -141,13 +151,13 @@
                 <li>Then you have <mark>Add stay</mark> and <mark>Add move</mark>. By pressing these buttons you are specifying the sequence of commands which your device will be making.</li>
                 <li>In the <mark>Stay</mark> iteration you are specifying how long the device will be staying without rotation while shooting at the same time.</li>
                 <li>In the <mark>Move</mark> iteration you are specifying the rotation direction, the rotation angle and how many steps the stepper motor will be making before taking each picture.</li>
-                <li>The Go! button sends your commands to the device and initiates shooting. After that the device will not respond to you commands till the job will be finished. That is made to make sure there will be no time deviations between shots caused by the client-server communication.</li>
+                <li>The Go! button sends your commands to the device and initiates shooting. After that the device will not respond to you commands till the job will be finished. That is made to make sure there will be no time deviations between shots caused by the client-server communication. If you want to interrupt the shooting simply unplug the power supply.</li>
                 <li>After you press Go! button the IR LED which is intended to control you camera should start blinking. You can see it blinking using the camera built in your phone. Look through the phone camera at the IR LED. Unlike other LEDs IR LEDs usually have a very focused and narrow beam so you should look directly in front of it.</li>
             </ol>
         </div>
-        <div class="col-lg-6 col-md-12 paragraph-media">
+        <div class="col-lg-5 col-md-12 paragraph-media">
             <div class="controls-ovirview-image center-block">
-                <img width="460" src="https://github.com/carbone-kid/Timelapse_Project/raw/gh-pages/controls_overview.jpg" alt="The control page screenshot">
+                <img width="360" src="https://github.com/carbone-kid/Timelapse_Project/raw/gh-pages/controls_overview.jpg" alt="The control page screenshot">
             </div>
         </div>
     </div>
@@ -156,11 +166,31 @@
         </div>
     </div>
 
+    <div class="row paragraph-header" id="controls-housing">
+        <div class="col-md-12">
+            <h2>Making the Housing</h2>
+        </div>
+    </div>
+    <div class="row paragraph">
+        <div class="col-lg-6 col-md-12 paragraph-intro text-justify">
+            <p>To make the housing you can use any rigid box with the sufficient mass. The more massive it is the more sturdy it will stay.</p>
+            <p>For the first version I made my housing from the 12 mm plywood and used 4 bolts as the adjustable stands. In the future I'm going to make a 3D printed case and share the model for printing here.</p>
+            <p>If you don't mind carrying tripod then probably it would be a good idea to make a tripod mount at the bottom instead of the stands. It will definitely gives you more control.</p>
+            <p>To attach the ball head I used the metal epoxy putty. It's a bi-components soft substance which is hardens if the components are mixed together. This is not the most professional way of joining metal parts but it's handy for quick prototyping.</p>
+        </div>
+        <div class="col-lg-6 col-md-12 paragraph-media">
+            <div class="video center-block">
+                <iframe src="https://www.youtube.com/embed/4QcRYwW0OKA" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
     <div class="navbar navbar-default navbar-fixed-bottom text-center">
         <a onclick="onClickWelcome()" class="btn btn-font">Welcome</a>
         <a onclick="onClickAssemblingHardware()" class="btn btn-font">Hardware</a>
         <a onclick="onClickInstallingSoftware()" class="btn btn-font">Software</a>
-        <a onclick="onClickControlsOverview()" class="btn btn-font">Controls overview</a>
+        <a onclick="onClickControlsOverview()" class="btn btn-font">Controls</a>
+        <a onclick="onClickMakingHousing()" class="btn btn-font">Housing</a>
     </div>
 </div>
 
