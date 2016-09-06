@@ -149,3 +149,9 @@ h1, h2, h3, h4 {
     margin-top: 5px;
     hidden: true;
 }
+
+.footer-contact-info {
+    margin-top: 60px;
+    padding-top: 20px;
+    margin-bottom: 60px;
+}
