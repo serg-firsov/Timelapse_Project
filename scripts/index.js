@@ -38,7 +38,7 @@ function onClickControlsOverview() {
     $('html, body').animate({scrollTop: elementPosition});
 }
 
-function onClickMakingHousing() {
-    var elementPosition = $('#controls-housing').position().top;
+function onClickMakingCasing() {
+    var elementPosition = $('#controls-casing').position().top;
     $('html, body').animate({scrollTop: elementPosition});
 }
