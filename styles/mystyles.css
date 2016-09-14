@@ -155,3 +155,7 @@ h1, h2, h3, h4 {
     padding-top: 20px;
     margin-bottom: 60px;
 }
+
+.bottom-placeholder {
+    margin-bottom: 60px;
+}

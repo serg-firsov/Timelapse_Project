@@ -208,7 +208,8 @@
         </div>
     </div>
 
-    <div id="comments_section"></div>
+    <div id="comments-section"></div>
+    <div class="bottom-placeholder"></div>
 
     <div class="navbar navbar-default navbar-fixed-bottom text-center">
         <a onclick="onClickWelcome()" class="btn btn-font">Welcome</a>
@@ -225,7 +226,7 @@
 <script src="scripts/index.js"></script>
 
 <script>
-    gapi.comments.render('comments_section', {
+    gapi.comments.render('comments-section', {
         href: window.location,
         width: $('.container').width(),
         first_party_property: 'BLOGGER',
