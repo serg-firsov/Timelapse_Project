@@ -208,6 +208,7 @@
         </div>
     </div>
 
+    <div id="comments_section"></div>
 
     <div class="navbar navbar-default navbar-fixed-bottom text-center">
         <a onclick="onClickWelcome()" class="btn btn-font">Welcome</a>
@@ -220,7 +221,17 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://apis.google.com/js/plusone.js"></script>
 <script src="scripts/index.js"></script>
+
+<script>
+    gapi.comments.render('comments_section', {
+        href: window.location,
+        width: $('.container').width(),
+        first_party_property: 'BLOGGER',
+        view_type: 'FILTERED_POSTMOD'
+    });
+</script>
 
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
